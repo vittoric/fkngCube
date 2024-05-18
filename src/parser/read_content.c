@@ -20,6 +20,7 @@ static void	check_extension(char **argv)
 	if (!file_ext || ft_strncmp(file_ext + 1, "cub", ft_strlen(argv[1])) != 0)
 		print_error("Invalid extension map ❌ use only '.cub'");
 }
+
 static void	check_map_empty_line(char *line)
 {
 	static unsigned int	count = 0;
@@ -35,6 +36,7 @@ static void	check_map_empty_line(char *line)
 	if ((ft_strlen(line) > 1 || *line != '\n') && flag_exit)
 		print_error("Empty line in map");
 }
+
 static char	*get_lines(int fd)
 {
 	char	*file;
@@ -42,7 +44,7 @@ static char	*get_lines(int fd)
 
 	line = get_next_line(fd);
 	file = ft_calloc(1, 1);
-	if (!file)
+	if (!file || !line)
 		exit(1);
 	while (line != NULL)
 	{
@@ -65,9 +67,9 @@ char	**read_content(char **argv)
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
 		print_error("File access error. Check if the file exists ⛔️");
-	if (read(fd, 0, 1) == 0)
-		print_error("Map file is blank 📁");
 	file = get_lines(fd);
+	if (!file)
+		print_error("Map file is blank 📁");
 	close(fd);
 	content = ft_split(file, '\n');
 	free(file);

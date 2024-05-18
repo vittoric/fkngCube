@@ -12,28 +12,28 @@
 
 #include "../../inc/cub3D.h"
 
-//revisado
-
-static void set_player_direction(t_game *game, double planeX, double planeY, int dirX, int dirY)
+static void	set_player_direction(t_game *game, double planeX, double planeY, int dirX, int dirY)
 {
-    game->cam.plane.x = planeX;
-    game->cam.plane.y = planeY;
-    game->player.dir.x = dirX;
-    game->player.dir.y = dirY;
+	game->cam.plane.x = planeX;
+	game->cam.plane.y = planeY;
+	game->player.dir.x = dirX;
+	game->player.dir.y = dirY;
 }
 
-static void get_player_direction(t_game *game)
+static void	get_player_direction(t_game *game)
 {
-    char playerPos = game->map[(int)game->player.x / WALL_SIZE][(int)game->player.y / WALL_SIZE];
+	char	player_pos;
 
-    if (playerPos == 'N')
-        set_player_direction(game, 0, 0.66, -1, 0);
-    else if (playerPos == 'E')
-        set_player_direction(game, 0.66, 0, 0, 1);
-    else if (playerPos == 'W')
-        set_player_direction(game, -0.66, 0, 0, -1);
-    else if (playerPos == 'S')
-        set_player_direction(game, 0, -0.66, 1, 0);
+	player_pos = game->map[(int)game->player.x
+		/ WALL_SIZE][(int)game->player.y / WALL_SIZE];
+	if (player_pos == 'N')
+		set_player_direction(game, 0, 0.66, -1, 0);
+	else if (player_pos == 'E')
+		set_player_direction(game, 0.66, 0, 0, 1);
+	else if (player_pos == 'W')
+		set_player_direction(game, -0.66, 0, 0, -1);
+	else if (player_pos == 'S')
+		set_player_direction(game, 0, -0.66, 1, 0);
 }
 
 static void	allocate_buffer(t_game *game)

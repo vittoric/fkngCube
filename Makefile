@@ -27,8 +27,8 @@ RED								:=	\033[1;95m
 
 #FLAGS
 CC								:= gcc
-CFLAGS							:= -c -Wall -Wextra -Werror
-MLX_FLAGS			            :=	-Imlx -lmlx -framework OpenGL -framework AppKit
+CFLAGS							:= -c -Wall -Wextra -Werror -I/usr/include -Imlx_linux
+MLX_FLAGS			            :=	-Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz 
 
 RM								:= rm -f 
 
@@ -76,7 +76,7 @@ begin:
 	@make  -s -C libft
 	@cp $(LIBFT) ./inc
 	@make -s all
-
+#areglar makefile que compile
 all: $(NAME) 
 
 $(NAME): $(EXEC_OBJS)  $(LIBFT)

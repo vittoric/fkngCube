@@ -35,9 +35,9 @@ t_list			*ft_lstmap(t_list *lst, \
 							void *(*f)(void *), void (*del)(void *));
 int				ft_isalnum(int c);
 int				ft_strisnum(char *c);
-char	*ft_fstrjoin(char *s1, char *s2);
-char	**ft_sort_matrix(char **mat)	;
-int	ft_get_matrix_size(char **env);
+char			*ft_fstrjoin(char *s1, char *s2);
+char			**ft_sort_matrix(char **mat);
+int				ft_get_matrix_size(char **env);
 int				ft_isspace(char c);
 int				ft_isdigit(int c);
 int				ft_strisdigit(char *str);

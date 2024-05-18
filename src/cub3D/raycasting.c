@@ -37,33 +37,33 @@ static void	dda_algorithm(t_game *game)
 	}
 }
 
-static void check_ray_direction(t_game *game)
+static void	check_ray_direction(t_game *game)
 {
-    if (game->cam.raydirx < 0)
-        game->cam.stepx = -1;
-    else
-        game->cam.stepx = 1;
-
-    if (game->cam.raydiry < 0)
-        game->cam.stepy = -1;
-    else
-        game->cam.stepy = 1;
-
-    if (game->cam.raydirx < 0)
-        game->cam.sidedx = 
-		((game->player.x / WALL_SIZE) - game->cam.grid_x) * game->cam.dx;
-    else
-        game->cam.sidedx = 
-		(game->cam.grid_x + 1 - (game->player.x / WALL_SIZE)) * game->cam.dx;
-
-    if (game->cam.raydiry < 0)
-        game->cam.sidedy = 
-		((game->player.y / WALL_SIZE) - game->cam.grid_y) * game->cam.dy;
-    else
-        game->cam.sidedy = 
-		(game->cam.grid_y + 1 - (game->player.y / WALL_SIZE)) * game->cam.dy;
+	if (game->cam.raydirx < 0)
+		game->cam.stepx = -1;
+	else
+		game->cam.stepx = 1;
+	if (game->cam.raydiry < 0)
+		game->cam.stepy = -1;
+	else
+		game->cam.stepy = 1;
+	if (game->cam.raydirx < 0)
+		game->cam.sidedx = (
+				((game->player.x / WALL_SIZE)
+					- game->cam.grid_x) * game->cam.dx);
+	else
+		game->cam.sidedx = (
+				(game->cam.grid_x + 1
+					- (game->player.x / WALL_SIZE)) * game->cam.dx);
+	if (game->cam.raydiry < 0)
+		game->cam.sidedy = (
+				((game->player.y / WALL_SIZE)
+					- game->cam.grid_y) * game->cam.dy);
+	else
+		game->cam.sidedy = (
+				(game->cam.grid_y + 1
+					- (game->player.y / WALL_SIZE)) * game->cam.dy);
 }
-
 
 void	raycasting(t_game *game)
 {

@@ -14,27 +14,27 @@
 
 //revisado
 
-static void draw_texture_color(t_game *game, int x, int start)
+static	void	draw_texture_color(t_game *game, int x, int start)
 {
-    int texcolor;
+	int	texcolor;
 
-    if (game->cam.texty < 0)
-        game->cam.texty *= -1;
-    if (game->cam.textx < 0)
-        game->cam.textx *= -1;
-    if (game->cam.offset == 0 && game->cam.raydirx < 0)
-        texcolor = game->textu_n.text_value
-        [(int)(WALL_SIZE * game->cam.texty + game->cam.textx)];
-    else if (game->cam.offset == 0 && game->cam.raydirx >= 0)
-        texcolor = game->textu_s.text_value
-        [(int)(WALL_SIZE * game->cam.texty + game->cam.textx)];
-    else if (game->cam.offset == 1 && game->cam.raydiry < 0)
-        texcolor = game->textu_w.text_value
-        [(int)(WALL_SIZE * game->cam.texty + game->cam.textx)];
-    else
-        texcolor = game->textu_e.text_value
-        [(int)(WALL_SIZE * game->cam.texty + game->cam.textx)];
-    ft_put_pixel(game->img, x, start, texcolor);
+	if (game->cam.texty < 0)
+		game->cam.texty *= -1;
+	if (game->cam.textx < 0)
+		game->cam.textx *= -1;
+	if (game->cam.offset == 0 && game->cam.raydirx < 0)
+		texcolor = game->textu_n.text_value
+		[(int)(WALL_SIZE * game->cam.texty + game->cam.textx)];
+	else if (game->cam.offset == 0 && game->cam.raydirx > 0)
+		texcolor = game->textu_s.text_value
+		[(int)(WALL_SIZE * game->cam.texty + game->cam.textx)];
+	else if (game->cam.offset == 1 && game->cam.raydiry < 0)
+		texcolor = game->textu_w.text_value
+		[(int)(WALL_SIZE * game->cam.texty + game->cam.textx)];
+	else
+		texcolor = game->textu_e.text_value
+		[(int)(WALL_SIZE * game->cam.texty + game->cam.textx)];
+	ft_put_pixel(game->img, x, start, texcolor);
 }
 
 static void	calculate_hit_pos(t_game *game, int start)
@@ -72,16 +72,16 @@ void	ft_draw_wall(t_game *game)
 	if (end >= SCREEN_HEIGHT)
 		end = SCREEN_HEIGHT - 1;
 	calculate_hit_pos(game, start);
-	while (start < end) 
-    {
-        game->cam.texty = (int)(game->cam.textpos);
-        if (game->cam.texty >= WALL_SIZE) 
-            game->cam.texty = WALL_SIZE - 1;
-        draw_texture_color(game, x, start);
-        start++;
-        game->cam.textpos += game->cam.increase;
-    }
-    x++;
+	while (start < end)
+	{
+		game->cam.texty = (int)(game->cam.textpos);
+		if (game->cam.texty >= WALL_SIZE)
+			game->cam.texty = WALL_SIZE - 1;
+		draw_texture_color(game, x, start);
+		start++;
+		game->cam.textpos += game->cam.increase;
+	}
+	x++;
 }
 
 static void	draw_ceiling_floor(t_game *game, t_color ceiling, t_color floor)

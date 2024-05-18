@@ -29,6 +29,7 @@ static int	ft_get_longest_line(char **matrix)
 	}
 	return (longest);
 }
+
 static void	add_og_map(char **map, char ***map_cpy)
 {
 	int	i;

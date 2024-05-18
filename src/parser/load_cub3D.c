@@ -48,15 +48,27 @@ static void	check_map_chars(t_game *game, char **map)
 		print_error("Couldn't find the player's position");
 }
 
-void	load_cub3D(char **argv, t_game *game)
+void	load_cub3d(char **argv, t_game *game)
 {
 	char	**content;
-	char	**map;
+	int		i;
+	int		len;
 
 	content = read_content(argv);
 	get_textures(game, content);
-	map = content + 6;
-	check_map_chars(game, map);
-	check_closed_walls(map);
-	game->map = map;
+	i = 0;
+	len = ft_strarr_len(content);
+	len = len - 6;
+	game->map = (char **) malloc(sizeof(char *) * (len + 1));
+	while (content[i + 6])
+	{
+		game->map[i] = (char *) malloc(ft_strlen(content[i + 6]) + 1);
+		ft_strncpy(game->map[i], content[i + 6], ft_strlen(content[i + 6]));
+		i++;
+	}
+	game->map[i] = 0;
+	check_map_chars(game, game->map);
+	check_closed_walls(game->map);
+	ft_free_double_void_pointer((void **) content,
+		ft_strarr_len(content), free);
 }

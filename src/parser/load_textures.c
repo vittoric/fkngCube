@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../../inc/cub3D.h"
+
 void	free_value(char **value)
 {
 	int	i;
@@ -23,6 +24,7 @@ void	free_value(char **value)
 	}
 	free(value);
 }
+
 static enum e_values	identify_line_value(char *line)
 {
 	while (*line && (*line == ' ' || *line == '	'))

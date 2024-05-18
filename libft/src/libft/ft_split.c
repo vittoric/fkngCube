@@ -110,7 +110,7 @@ char	**ft_split(char const *s, char c)
 			flag = 0;
 			words++;
 		}
-			i++;
+		i++;
 	}
 	return (ft_create_split(s + delim, c, words));
 }

@@ -17,12 +17,12 @@
 # include "../libft/inc/libft.h"
 # include "../libft/inc/get_next_line.h"
 # include "./structs.h"
-# include <mlx.h>
 # include <math.h>
 # include <time.h>
 # include <stdio.h>
 # include <stdlib.h>
 # include <fcntl.h>
+# include "../mlx_linux/mlx.h"
 # include <limits.h>
 
 # define PROGRAM_NAME "cub3D - "
@@ -42,15 +42,15 @@
 
 enum e_keys
 {
-	W = 13,
-	A = 0,
-	S = 1,
-	D = 2,
-	UP = 126,
-	LEFT = 123,
-	DOWN = 125,
-	RIGHT = 124,
-	ESC = 53
+	W = 119,
+	A = 97,
+	S = 115,
+	D = 100,
+	UP = 65362,
+	LEFT = 65361,
+	DOWN = 65364,
+	RIGHT = 65363,
+	ESC = 65307
 };
 
 /**
@@ -69,7 +69,7 @@ enum e_values
 };
 
 void	print_error(char *text);
-void	load_cub3D(char **argv, t_game *game);
+void	load_cub3d(char **argv, t_game *game);
 char	**read_content(char **argv);
 void	get_textures(t_game *game, char **file_con);
 void	check_closed_walls(char **map);
