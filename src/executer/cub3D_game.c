@@ -6,35 +6,11 @@
 /*   By: vcodrean <vcodrean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/28 18:14:28 by vcodrean          #+#    #+#             */
-/*   Updated: 2024/03/29 20:03:40 by vcodrean         ###   ########.fr       */
+/*   Updated: 2024/05/19 16:42:54 by vcodrean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/cub3D.h"
-
-static void	set_player_direction(t_game *game, double planeX, double planeY, int dirX, int dirY)
-{
-	game->cam.plane.x = planeX;
-	game->cam.plane.y = planeY;
-	game->player.dir.x = dirX;
-	game->player.dir.y = dirY;
-}
-
-static void	get_player_direction(t_game *game)
-{
-	char	player_pos;
-
-	player_pos = game->map[(int)game->player.x
-		/ WALL_SIZE][(int)game->player.y / WALL_SIZE];
-	if (player_pos == 'N')
-		set_player_direction(game, 0, 0.66, -1, 0);
-	else if (player_pos == 'E')
-		set_player_direction(game, 0.66, 0, 0, 1);
-	else if (player_pos == 'W')
-		set_player_direction(game, -0.66, 0, 0, -1);
-	else if (player_pos == 'S')
-		set_player_direction(game, 0, -0.66, 1, 0);
-}
 
 static void	allocate_buffer(t_game *game)
 {

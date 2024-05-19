@@ -63,7 +63,7 @@ PARSER_FINAL_SRC				:= 	$(addprefix $(PARSER_SRC_DIR)/, $(addsuffix .c, $(PARSER
 PARSER_FINAL_OBJ				:= 	$(addprefix $(PARSER_OBJ_DIR)/, $(addsuffix .o, $(PARSER_SOURCES)))
 
 #EXECUTER
-EXECUTER_SOURCES				:=  event_handler cub3D_game
+EXECUTER_SOURCES				:=  event_handler cub3D_game player_direction
 EXECUTER_FINAL_SRC				:= 	$(addprefix $(EXECUTER_SRC_DIR)/, $(addsuffix .c, $(EXECUTER_SOURCES)))
 EXECUTER_FINAL_OBJ				:= 	$(addprefix $(EXECUTER_OBJ_DIR)/, $(addsuffix .o, $(EXECUTER_SOURCES)))
 

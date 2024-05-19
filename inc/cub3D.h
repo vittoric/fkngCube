@@ -6,7 +6,7 @@
 /*   By: vcodrean <vcodrean@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 15:51:00 by arr02             #+#    #+#             */
-/*   Updated: 2024/03/29 19:02:18 by vcodrean         ###   ########.fr       */
+/*   Updated: 2024/05/19 16:47:56 by vcodrean         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@
 # define SPEED 32
 # define WALLS 4
 # define COLORS 2
-
+/*
 #define min(a,b) ((a) < (b) ? (a) : (b))
 #define max(a,b) ((a) > (b) ? (a) : (b))
-
+*/
 
 /* Enums */
 
@@ -83,4 +83,5 @@ void	raycasting(t_game *game);
 void	ft_draw_wall(t_game *game);
 int		exit_game(t_game *game);
 int		event_handler(enum e_keys key, t_game *game);
+void	get_player_direction(t_game *game);
 #endif
