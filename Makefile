@@ -16,6 +16,7 @@ vpath %.o obj
 
 NAME 							:= cub3D
 LIBFT							:= ./libft/libft.a
+MLX								:= mlx_linux/libmlx.a
 
 #COLORS
 DEFAULT							:=	\033[1;39m
@@ -75,8 +76,10 @@ EXEC_OBJS 						:= $(CUB3D_FINAL_OBJ) $(PARSER_FINAL_OBJ) $(EXECUTER_FINAL_OBJ)
 begin:
 	@make  -s -C libft
 	@cp $(LIBFT) ./inc
+	@make  -s -C mlx_linux
+	@cp $(MLX) ./inc
 	@make -s all
-#areglar makefile que compile
+
 all: $(NAME) 
 
 $(NAME): $(EXEC_OBJS)  $(LIBFT)
@@ -96,9 +99,12 @@ clean:
 	@$(RM) -rf obj
 	@echo "$(RED)      🗑️ DELETED $(OBJ_DIR)/*$(DEFAULT)"
 	@make clean -s -C libft 
+	@make clean -s -C mlx_linux
 
 fclean: clean
 	@$(RM) -rf $(NAME)
+	@$(RM) -rf ./inc/libft.a
+	@$(RM) -rf ./inc/libmlx.a
 	@echo "$(RED)      🗑️ DELETED $(NAME) $(DEFAULT)"
 	@make fclean -s -C libft 
 

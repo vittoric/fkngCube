@@ -1,10 +1,8 @@
-NO        ./textures/north_texture.xpm
+NO ./textures/north_texture.xpm
 SO ./textures/south_texture.xpm
 WE ./textures/west_texture.xpm
 EA ./textures/east_texture.xpm
-
-
-F       220,100,0
+F 220,100,0
 C 225,30,0
 
         1111111111111111111111111

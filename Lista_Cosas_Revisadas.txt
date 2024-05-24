@@ -1,0 +1,38 @@
+Entrega:
+
+Hecho:
+Mapas Good -> Revisados todos, todos funcionan CHECK
+Leaks -> Solo hay leaks de la mlx_linux     CHECK
+Compilación -> Añadida reglas para compilar la minilibX -> Tiene que tener el nombre mlx_linux. Probar que funciona con nueva instalación. Añadido clean tb
+
+
+Por hacer:
+Mapas Bad -> Todavía sin hacer un script que me los ejecute
+Parseo -> Todavía sin revisar, me falta leer por encima como se realiza el parseo para la revisión
+Norminette -> Por terminar
+Subir a git -> Por terminar
+Comprobación final -> Por terminar
+Comprobar que al subir todo a git la mlx_linux también se suba -> Por terminar
+Comprobar que al subir todo a git la mlx_linux también se suba -> Por terminar
+
+Requisitos:
+    Jugabilidad:
+        Giros con las flechas:       CHECK
+        WASD moverse:                CHECK
+        ESC close:                   CHECK
+        Flecha Roja Close:           CHECK
+    Parseo:
+        Añadir un caracter que no sea 1,0, NSEW al mapa -> COMPROBAR
+        Mapa no cerrado -> COMPROBAR
+        Separar una, dos, varias lineas(100) los elementos -> COMPROBAR
+        Cambiar el orden de los elementos -> COMPROBAR
+        No añadir un elemento -> COMPROBAR
+        Añadir dos veces el mismo elemento -> COMPROBAR
+        Añadir un elemento con un valor no existente -> COMPROBAR
+        Separar por espacios los valores dentro de los elementos
+            Separar colores con espacios entre comas -> CHECK; Hacer -> F 220,   250,2 error pero hacer F         220,250,2 no da error, se puede discutir diciendo que para nosotros el color r,g,b es un único tipo de información
+            Separar texturas con espacios -> CHECK
+        Espacios en el mapa -> Se tratan como fuera del mapa por lo que 0 al lado de un espacio es error -> COMPROBAR
+
+Test:
+    Comprobar que los tests comprueban todo lo de arriba

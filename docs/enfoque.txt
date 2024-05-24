@@ -1,7 +1,0 @@
-El enfoque está bastante claro al menos para el trabajo inicial:
-    1º Pensar en la estructura que se va a utilizar para guardar todo lo del programa
-    2º Lectura correcta del mapa, gestión de argumentos, gestión de errores, inicialización correcta y cargado de mapa.
-    3º Gestion de la ventana
-    4º Creación y carga de texturas
-    5º Movimientos del jugador
-    

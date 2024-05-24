@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   event_handler.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vcodrean <vcodrean@student.42.fr>          +#+  +:+       +#+        */
+/*   By: alvarrod <a.rr02_cuentas@outlook.com>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 02:12:06 by alvarrod          #+#    #+#             */
-/*   Updated: 2024/03/29 20:03:48 by vcodrean         ###   ########.fr       */
+/*   Updated: 2024/05/24 13:58:50 by alvarrod         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ static void	handle_arows(t_game *game, enum e_keys key)
 		- game->cam.plane.y * sin(rot_speed);
 	game->cam.plane.y = old_plane_x * sin(rot_speed)
 		+ game->cam.plane.y * cos(rot_speed);
-	printf("dir.x: %f\n", game->player.dir.x);
-	printf("dir.y: %f\n", game->player.dir.y);
 }
 
 int	event_handler(enum e_keys key, t_game *game)
