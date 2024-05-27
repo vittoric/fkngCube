@@ -7,9 +7,9 @@ Compilación -> Añadida reglas para compilar la minilibX -> Tiene que tener el 
 
 
 Por hacer:
-Mapas Bad -> Todavía sin hacer un script que me los ejecute
-Parseo -> Todavía sin revisar, me falta leer por encima como se realiza el parseo para la revisión
-Norminette -> Por terminar
+Mapas Bad ->  CHECK
+Parseo ->   CHECK
+Norminette ->  CHECK
 Subir a git -> Por terminar
 Comprobación final -> Por terminar
 Comprobar que al subir todo a git la mlx_linux también se suba -> Por terminar
@@ -22,17 +22,17 @@ Requisitos:
         ESC close:                   CHECK
         Flecha Roja Close:           CHECK
     Parseo:
-        Añadir un caracter que no sea 1,0, NSEW al mapa -> COMPROBAR
-        Mapa no cerrado -> COMPROBAR
-        Separar una, dos, varias lineas(100) los elementos -> COMPROBAR
-        Cambiar el orden de los elementos -> COMPROBAR
-        No añadir un elemento -> COMPROBAR
-        Añadir dos veces el mismo elemento -> COMPROBAR
-        Añadir un elemento con un valor no existente -> COMPROBAR
+        Añadir un caracter que no sea 1,0, NSEW al mapa -> CHECK 
+        Mapa no cerrado ->  CHECK 
+        Separar una, dos, varias lineas(100) los elementos ->  CHECK
+        Cambiar el orden de los elementos -> CHECK
+        No añadir un elemento -> CHECK
+        Añadir dos veces el mismo elemento -> CHECK 
+        Añadir un elemento con un valor no existente -> CHECK
         Separar por espacios los valores dentro de los elementos
-            Separar colores con espacios entre comas -> CHECK; Hacer -> F 220,   250,2 error pero hacer F         220,250,2 no da error, se puede discutir diciendo que para nosotros el color r,g,b es un único tipo de información
+            Separar colores con espacios entre comas -> CHECK
             Separar texturas con espacios -> CHECK
-        Espacios en el mapa -> Se tratan como fuera del mapa por lo que 0 al lado de un espacio es error -> COMPROBAR
+        Espacios en el mapa ->  CHECK
 
 Test:
-    Comprobar que los tests comprueban todo lo de arriba
+    Comprobar que los tests comprueban todo lo de arriba -> CHECK
